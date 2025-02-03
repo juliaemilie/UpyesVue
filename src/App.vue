@@ -1,85 +1,39 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 </script>
 
-<template>
-  <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
+<template>  
+  <header class="white-green-background sticky-top min-vh-10 shadow-sm">
+        <nav class="navbar navbar-expand-sm">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="../assets/logoPure.png" alt="Upyes Logo" width="50" class="d-inline-block align-text-top">
+                    UPYES
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-center">
+                    <ul class="navbar-nav" id="header-nav">
+                        <li class="nav-item"><RouterLink to="/" class="nav-link active" aria-current="page">Klimaschutz</RouterLink></li>
+                        <li class="nav-item"><RouterLink to="/about" class="nav-link">Über uns</RouterLink></li>
+                        <li class="nav-item"><RouterLink to="/contact" class="nav-link">Kontakt</RouterLink></li>
+                    </ul>
 
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+                </div>
 
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
-    </div>
-  </header>
+            </div>
+        </nav>
+    </header>
 
   <RouterView />
+  <footer class="container-fluid black-green-background white-green-color">
+        <nav>
+            <ul class="nav justify-content-end" id="footer-nav">
+                <li class="nav-item"><RouterLink to="/privacy" class="nav-link">Datenschutz</RouterLink></li>
+                <li class="nav-item"><RouterLink to="/imprint" class="nav-link">Impressum</RouterLink></li>
+            </ul>
+        </nav>
+    </footer>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
