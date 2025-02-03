@@ -9,17 +9,7 @@ export default defineConfig({
   plugins: [
     vue(),
     vueDevTools(),
-  ],
-  css: {
-    preprocessorOptions: {
-      scss: {
-        additionalData: `
-          @import "node_modules/bootstrap/scss/_variables.scss";
-          @import "node_modules/bootstrap/scss/_mixins.scss";
-        `
-      }
-    }
-  },
+  ],  
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
