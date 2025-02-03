@@ -1,3 +1,8 @@
+<script setup>
+import TextItem from './TextItem.vue';
+import EmissionTable from './EmissionTable.vue';
+</script>
+
 <template>
   <div class="d-flex">
     <div class="my-4 px-5" id="content">
