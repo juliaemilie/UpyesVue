@@ -5,18 +5,14 @@ import EmissionTable from './EmissionTable.vue';
 
 <template>
   <div class="d-flex">
-    <nav class="light-green-background col-md-3 col-lg-2 navbar navbar-expand-md sticky-top vh-100" id="sidebar">
-      <div class="d-flex black-green-color px-2">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse flex-column">
+    <nav class="light-green-background col-md-3 col-lg-2 navbar sticky-top vh-100" id="sidebar">
+      <div class="d-flex black-green-color px-2">        
+        <div class="flex-column">
           <div class="navbar-brand">Klimaschutz</div>
           <ul class="navbar-nav flex-column" id="main-nav">
             <li class="nav-item py-2"><a class="nav-link" href="#climatecrisis"><i
                   class="fa-solid fa-fire-flame-curved"></i> Die Klimakrise</a></li>
-            <li class="nav-item py-2"><a class="nav-link" href="#co2emitters"><i class="fa-solid fa-smog"></i> Die
+            <li class="nav-item py-2"><a class="nav-link" href="/#co2emitters"><i class="fa-solid fa-smog"></i> Die
                 größten
                 CO<sub>2</sub>-Emittenten</a>
             </li>
