@@ -3,7 +3,7 @@
         <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">
-                    <img src="../assets/logoPure.png" alt="Green Flame Logo" width="50" class="d-inline-block align-text-top">
+                    <img src="@/assets/logoPure.png" alt="Green Flame Logo" width="50" class="d-inline-block align-text-top">
                     UPYES
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"

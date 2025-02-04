@@ -5,6 +5,32 @@ import EmissionTable from './EmissionTable.vue';
 
 <template>
   <div class="d-flex">
+    <nav class="light-green-background col-md-3 col-lg-2 navbar navbar-expand-md sticky-top vh-100" id="sidebar">
+      <div class="d-flex black-green-color px-2">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-column">
+          <div class="navbar-brand">Klimaschutz</div>
+          <ul class="navbar-nav flex-column" id="main-nav">
+            <li class="nav-item py-2"><a class="nav-link" href="#climatecrisis"><i
+                  class="fa-solid fa-fire-flame-curved"></i> Die Klimakrise</a></li>
+            <li class="nav-item py-2"><a class="nav-link" href="#co2emitters"><i class="fa-solid fa-smog"></i> Die
+                größten
+                CO<sub>2</sub>-Emittenten</a>
+            </li>
+            <li class="nav-item py-2"><a class="nav-link" href="#projects"><i class="fa-solid fa-diagram-project"></i>
+                Unsere Projekte</a></li>
+            <li class="nav-item py-2"><RouterLink to="/#getactive" class="nav-link"><i class="fa-solid fa-people-group"></i>
+                Werde aktiv</RouterLink></li>
+          </ul>
+
+        </div>
+
+      </div>
+    </nav>
+
     <div class="my-4 px-5" id="content">
       <div class="container-fluid col-md-8 justify-content-center">
         <h1>Klimaschutz</h1>
@@ -89,7 +115,7 @@ import EmissionTable from './EmissionTable.vue';
           <div class="row">
             <h2 class="mb-3">Werde aktiv</h2>
             <div class="col-md-4">
-              <img src="../assets/windmill.jpg" alt="Windrad" class="img-fluid">
+              <img src="@/assets/windmill.jpg" alt="Windrad" class="img-fluid">
               <h2>Informier dich</h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
@@ -100,7 +126,7 @@ import EmissionTable from './EmissionTable.vue';
               </p>
             </div>
             <div class="col-md 4">
-              <img src="../assets/demonstration.jpg" alt="Klima-Demonstration" class="img-fluid">
+              <img src="@/assets/demonstration.jpg" alt="Klima-Demonstration" class="img-fluid">
               <h2>Engangiere dich</h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
@@ -111,7 +137,7 @@ import EmissionTable from './EmissionTable.vue';
               </p>
             </div>
             <div class="col-md-4">
-              <img src="../assets/teamspirit.jpg" alt="Team" class="img-fluid">
+              <img src="@/assets/teamspirit.jpg" alt="Team" class="img-fluid">
               <h2>Schließe dich mit anderen zusammen</h2>
               <p>
                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
