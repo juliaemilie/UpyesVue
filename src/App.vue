@@ -4,12 +4,12 @@ import 'bootstrap'
 </script>
 
 <template>  
-  <header class="white-green-background sticky-top min-vh-10 shadow-sm">
+  <header class="white-green-background sticky-top vh-10 shadow-sm">
         <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand d-flex" href="#">
                     <img src="@/assets/logoPure.png" alt="Upyes Logo" width="50" class="d-inline-block align-text-top">
-                    UPYES
+                    <div>UPYES</div>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
