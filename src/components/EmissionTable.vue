@@ -13,7 +13,7 @@ function checkCountry(company) {
     return currentlySelectedCountries.value.includes(company.country);
 }
 
-function sortByName(a, b) {
+function compareStrings(a, b) {
     const nameA = a.toUpperCase(); // ignore upper and lowercase
     const nameB = b.toUpperCase(); // ignore upper and lowercase
     if (nameA < nameB) {
@@ -34,15 +34,16 @@ function filterAndSort() {
     if (currentlySelectedCompany.value !== '') {
         data.value = data.value.filter((company) => company.name === currentlySelectedCompany.value);
     }
-    switch (sorting) {
-        case 'htl-company':
-            data.value.sort((a, b) => sortByName(b.company, a.company));
+    console.log("doing stuff");
+    switch (sorting.value) {
+        case 'htl-company':            
+            data.value.sort((a, b) => compareStrings(b.name, a.name));
             break;
         case 'lth-country':
-            data.value.sort((a, b) => sortByName(a.country, b.country));
+            data.value.sort((a, b) => compareStrings(a.country, b.country));
             break;
         case 'htl-country':
-            data.value.sort((a, b) => sortByName(a.country, b.country));
+            data.value.sort((a, b) => compareStrings(b.country, a.country));
             break;
         case 'lth-emissions':
             data.value.sort((a, b) => parseFloat(a.emissions) - parseFloat(b.emissions));
@@ -51,7 +52,7 @@ function filterAndSort() {
             data.value.sort((a, b) => parseFloat(b.emissions) - parseFloat(a.emissions));
             break;
         default:
-            data.value.sort((a, b) => sortByName(a.company, b.company));
+            data.value.sort((a, b) => compareStrings(a.name, b.name));
     }
 }
 </script>
@@ -73,7 +74,7 @@ function filterAndSort() {
             <CompanyFilter v-model="currentlySelectedCompany"></CompanyFilter>
             <label>
                 Sortierung:
-                <select v-model="sort">
+                <select v-model="sorting">
                     <option value="lth-company">alphabetisch aufsteigend nach Unternehmen</option>
                     <option value="htl-company">alphabetisch absteigend nach Unternehmen</option>
                     <option value="lth-country">alphabetisch aufsteigend nach Land</option>
