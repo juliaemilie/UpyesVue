@@ -16,8 +16,17 @@
 
 // include bootstrap functions
 @import "../../node_modules/bootstrap/scss/functions";
-@import "../../node_modules/bootstrap/scss/functions";
+
+// create custom variables and override default bootstrap variables
+$white-green: #E2E9DA;
+$light-green: #ADD772;
+$black-green: #054E2D;
+//lightens color 
+$custom-green: tint-color($black-green, 10%);
+$primary: $black-green;
+
 @import "../../node_modules/bootstrap/scss/variables";
+$theme-colors: map-merge($theme-colors, ("primary": $primary ));
 @import "../../node_modules/bootstrap/scss/variables-dark";
 @import "../../node_modules/bootstrap/scss/maps";
 @import "../../node_modules/bootstrap/scss/mixins";
@@ -42,22 +51,11 @@ $utilities: map-merge($utilities,
         ),
       ),
     ));
-// create custom variables and override default bootstrap variables
-$white-green: #E2E9DA;
-$light-green: #ADD772;
-$black-green: #054E2D;
-//lightens color 
-$custom-green: tint-color($black-green, 10%);
-$primary: $light-green;
-$secondary: $black-green;
-$body-bg: #fff;
-$body-color: #111;
 
 $headings-font-family: "Manrope Bold", serif;
 $font-family-sans-serif: "Manrope Regular", sans-serif;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
-
 
 h1,
 h2,
@@ -108,10 +106,12 @@ ul.navbar-nav,
   background-color: mix(white, $light-green, 50%);
 }
 
+input[type=checkbox]{accent-color:$black-green;}
+
 #footer-nav li a {
   color: $white-green;
 
   &:hover {
     background-color: mix(black, $black-green, 20%);
   }
-}
+} 

@@ -36,7 +36,7 @@ function filterAndSort() {
     }
     console.log("doing stuff");
     switch (sorting.value) {
-        case 'htl-company':            
+        case 'htl-company':
             data.value.sort((a, b) => compareStrings(b.name, a.name));
             break;
         case 'lth-country':
@@ -60,32 +60,47 @@ function filterAndSort() {
 <template>
     <section class="my-4" id="co2emitters">
         <h2 class="mb-3">Die größten CO<sub>2</sub>-Emittenten</h2>
-        <form>
-            <fieldset id="country">
-                <legend>Länder</legend>
-                <ul>
-                    <li v-for="country in countries" :key="country">
-                        <input v-model="currentlySelectedCountries" type="checkbox" :id="country" :value="country"
-                            :index="country" />
-                        <label :for="country">{{ country }}</label>
-                    </li>
-                </ul>
-            </fieldset>
-            <CompanyFilter v-model="currentlySelectedCompany"></CompanyFilter>
-            <label>
-                Sortierung:
-                <select v-model="sorting">
-                    <option value="lth-company">alphabetisch aufsteigend nach Unternehmen</option>
-                    <option value="htl-company">alphabetisch absteigend nach Unternehmen</option>
-                    <option value="lth-country">alphabetisch aufsteigend nach Land</option>
-                    <option value="htl-country">alphabetisch absteigend nach Land</option>
-                    <option value="lth-emissions">aufsteigend nach CO<sub>2</sub>-Emissionen</option>
-                    <option value="htl-emissions">absteigend nach CO<sub>2</sub>-Emissionen</option>
-                </select>
-            </label>
-            <button @click.prevent="filterAndSort">Anwenden</button>
+        <form class="container light-green-background my-5 p-4 rounded shadow-sm">
+            <div class="row">
+                <div class="dropdown col d-flex justify-content-start">
+                    <button class="btn btn-primary dropdown-toggle align-self-center" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        <span>Nach Ländern filtern</span>
+                    </button>
+                    <ul class="list-unstyled dropdown-menu">
+                        <li v-for="country in countries" :key="country">
+                            <div class="dropdown-item">
+                                <input v-model="currentlySelectedCountries" type="checkbox" :id="country"
+                                    :value="country" :index="country" />
+                                <label :for="country" class="ps-2">{{ country }}</label>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-8">
+                    <CompanyFilter v-model="currentlySelectedCompany"></CompanyFilter>
+                </div>
+            </div>
+            <div class="row">
+                <label class="col">
+                    <span>Sortierung</span>
+                    <select v-model="sorting" class="form-select" aria-label="Sortierung">
+                        <option value="lth-company" selected>alphabetisch aufsteigend nach Unternehmen</option>
+                        <option value="htl-company">alphabetisch absteigend nach Unternehmen</option>
+                        <option value="lth-country">alphabetisch aufsteigend nach Land</option>
+                        <option value="htl-country">alphabetisch absteigend nach Land</option>
+                        <option value="lth-emissions">aufsteigend nach CO<sub>2</sub>-Emissionen</option>
+                        <option value="htl-emissions">absteigend nach CO<sub>2</sub>-Emissionen</option>
+                    </select>
+                </label>
+                <div class="col-3 d-flex justify-content-center">
+                    <button type="button" @click.prevent="filterAndSort"
+                        class="btn btn-primary btn-lg align-self-end">Anwenden</button>
+                </div>
+
+            </div>
         </form>
-        <table class="table" id="emissions-table">
+        <table class="table my-4" id="emissions-table">
             <thead>
                 <tr>
                     <th>Unternehmen</th>
