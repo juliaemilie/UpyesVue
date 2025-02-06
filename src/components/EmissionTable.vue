@@ -110,9 +110,9 @@ function filterAndSort() {
             </thead>
             <tbody id="emissions-table-body">
                 <tr v-for="{ name, country, emissions } in data" :key="name">
-                    <td>{{ name }}</td>
-                    <td>{{ country }}</td>
-                    <td>{{ parseFloat(emissions).toFixed(2) }}</td>
+                    <td class="px-0 p-md-2">{{ name }}</td>
+                    <td class="px-0 p-md-2">{{ country }}</td>
+                    <td class="px-0 p-md-2">{{ parseFloat(emissions).toFixed(2) }}</td>
                 </tr>
             </tbody>
         </table>
