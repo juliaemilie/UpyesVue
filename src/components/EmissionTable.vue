@@ -62,7 +62,7 @@ function filterAndSort() {
         <h2 class="mb-3">Die größten CO<sub>2</sub>-Emittenten</h2>
         <form class="container light-green-background my-5 p-4 rounded shadow-sm">
             <div class="row">
-                <div class="dropdown col d-flex justify-content-start">
+                <div class="dropdown col d-flex justify-content-start m-2">
                     <button class="btn btn-primary dropdown-toggle align-self-center" type="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         <span>Nach Ländern filtern</span>
@@ -77,23 +77,23 @@ function filterAndSort() {
                         </li>
                     </ul>
                 </div>
-                <div class="col-8">
+                <div class="col m-2">
                     <CompanyFilter v-model="currentlySelectedCompany"></CompanyFilter>
                 </div>
             </div>
             <div class="row">
-                <label class="col">
+                <label class="col m-2">
                     <span>Sortierung</span>
                     <select v-model="sorting" class="form-select" aria-label="Sortierung">
                         <option value="lth-company" selected>alphabetisch aufsteigend nach Unternehmen</option>
                         <option value="htl-company">alphabetisch absteigend nach Unternehmen</option>
                         <option value="lth-country">alphabetisch aufsteigend nach Land</option>
                         <option value="htl-country">alphabetisch absteigend nach Land</option>
-                        <option value="lth-emissions">aufsteigend nach CO<sub>2</sub>-Emissionen</option>
-                        <option value="htl-emissions">absteigend nach CO<sub>2</sub>-Emissionen</option>
+                        <option value="lth-emissions">aufsteigend nach CO2-Emissionen</option>
+                        <option value="htl-emissions">absteigend nach CO2-Emissionen</option>
                     </select>
                 </label>
-                <div class="col-3 d-flex justify-content-center">
+                <div class="col-lg-3 d-flex justify-content-center m-2">
                     <button type="button" @click.prevent="filterAndSort"
                         class="btn btn-primary btn-lg align-self-end">Anwenden</button>
                 </div>

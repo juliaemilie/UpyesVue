@@ -11,11 +11,11 @@ import 'bootstrap'
                     <img src="@/assets/logoPure.png" alt="Upyes Logo" width="50" class="d-inline-block align-text-top">
                     <div>UPYES</div>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-navbar"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-center">
+                <div class="collapse navbar-collapse justify-content-center" id="header-navbar">
                     <ul class="navbar-nav" id="header-nav">
                         <li class="nav-item"><RouterLink to="/" class="nav-link active" aria-current="page">Klimaschutz</RouterLink></li>
                         <li class="nav-item"><RouterLink to="/about" class="nav-link">Über uns</RouterLink></li>

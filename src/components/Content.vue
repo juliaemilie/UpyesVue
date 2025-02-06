@@ -15,6 +15,10 @@ import Sidebar from './Sidebar.vue'
         <div class="container-fluid">
           <div class="row justify-content-center">
             <div class="col-11 col-md-9 col-lg-8 my-5">
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#side-navbar"
+                aria-expanded="false" aria-controls="collapseExample">
+                <span class="navbar-toggler-icon"></span>
+              </button>
               <section class="pt-4">
                 <h1 class="m-3">Klimaschutz</h1>
                 <figure>
@@ -99,7 +103,7 @@ import Sidebar from './Sidebar.vue'
               <section class="container my-4" id="getactive">
                 <div class="row">
                   <h2 class="mb-3">Werde aktiv</h2>
-                  <div class="col-md-4">
+                  <div class="col-lg-4">
                     <img src="@/assets/windmill.jpg" alt="Windrad" class="img-fluid">
                     <h2 class="fs-4 p-3">Informiere dich</h2>
                     <p>
@@ -110,7 +114,7 @@ import Sidebar from './Sidebar.vue'
                       justo duo dolores et ea rebum. Stet clita kasd
                     </p>
                   </div>
-                  <div class="col-md 4">
+                  <div class="col-lg-4">
                     <img src="@/assets/demonstration.jpg" alt="Klima-Demonstration" class="img-fluid">
                     <h2 class="fs-4 p-3">Engangiere dich</h2>
                     <p>
@@ -121,9 +125,9 @@ import Sidebar from './Sidebar.vue'
                       justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea
                     </p>
                   </div>
-                  <div class="col-md-4">
+                  <div class="col-lg-4">
                     <img src="@/assets/teamspirit.jpg" alt="Team" class="img-fluid">
-                    <h2 class="fs-4 p-3">Schließe dich mit anderen zusammen</h2>
+                    <h2 class="fs-4 p-3">Bilde ein Team</h2>
                     <p>
                       Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
                       tempor
