@@ -21,9 +21,7 @@ import 'bootstrap'
                         <li class="nav-item"><RouterLink to="/about" class="nav-link">Über uns</RouterLink></li>
                         <li class="nav-item"><RouterLink to="/contact" class="nav-link">Kontakt</RouterLink></li>
                     </ul>
-
                 </div>
-
             </div>
         </nav>
     </header>

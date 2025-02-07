@@ -62,6 +62,16 @@ $utilities: map-merge($utilities,
       ),
     ));
 
+    // add value to vh
+$utilities: map-merge($utilities,
+("viewport-width": map-merge(map-get($utilities, "viewport-width"),
+    (values: map-merge(map-get(map-get($utilities, "viewport-width"), "values"),
+        (10: 10%, 20: 20%, 30: 30%, 40: 40%, 50: 50%, 60: 60%, 70: 70%, 80: 80%, 90: 90%),
+      ),
+    ),
+  ),
+));
+
 $headings-font-family: "Montserrat Bold", sans-serif;
 $logo-font-family: "Montserrat Medium", sans-serif;
 $font-family-sans-serif: "Manrope Regular", sans-serif;
