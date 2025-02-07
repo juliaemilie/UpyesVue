@@ -1,9 +1,4 @@
 @font-face {
-  font-family: "Manrope Bold";
-  src: url("./fonts/Manrope-Bold.woff");
-}
-
-@font-face {
   font-family: "Monrope Regular";
   src: url("./fonts/Manrope-Regular.woff");
 }
@@ -31,8 +26,8 @@
 $white-green: #E2E9DA;
 $light-green: #ADD772;
 $black-green: #054E2D;
-//lightens color 
-$custom-green: tint-color($black-green, 10%);
+
+//set custom values for bootstrap color scheme (used in buttons etc.)
 $primary: $black-green;
 $secondary: $light-green;
 
@@ -41,16 +36,6 @@ $secondary: $light-green;
 @import "../../node_modules/bootstrap/scss/maps";
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/utilities";
-
-// add value to min-vh
-$utilities: map-merge($utilities,
-    ("min-viewport-height": map-merge(map-get($utilities, "min-viewport-height"),
-        (values: map-merge(map-get(map-get($utilities, "min-viewport-height"), "values"),
-            (10: 10%, 50: 50%),
-          ),
-        ),
-      ),
-    ));
 
 // add value to vh
 $utilities: map-merge($utilities,
@@ -74,7 +59,7 @@ $utilities: map-merge($utilities,
 
 $headings-font-family: "Montserrat Bold", sans-serif;
 $logo-font-family: "Montserrat Medium", sans-serif;
-$font-family-sans-serif: "Manrope Regular", sans-serif;
+$font-family-sans-serif: "Monrope Medium", sans-serif;
 
 @import "../../node_modules/bootstrap/scss/bootstrap";
 
@@ -120,6 +105,10 @@ ul.navbar-nav,
 .black-green-color {
   color: $black-green;
 }
+
+header {
+  z-index: 1040;
+} 
 
 #header-nav li a:hover {
   background-color: mix(white, $white-green, 50%);

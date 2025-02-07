@@ -4,12 +4,12 @@ import { ref, computed } from 'vue';
 const props = defineProps(['alignLeft']);
 const deviceHasSmallScreen = ref(window.innerWidth < 992);
 const deviceHasBigScreen = ref(window.innerWidth >= 992);
-const sidebarVisible = ref(true);
+const sidebarVisible = ref(deviceHasBigScreen.value);
 
 function handleWindowSizeChange() {
     deviceHasSmallScreen.value = (window.innerWidth < 992);
     deviceHasBigScreen.value = (window.innerWidth >= 992);
-    sidebarVisible.value = (!deviceHasSmallScreen.value);
+    sidebarVisible.value = deviceHasBigScreen.value;
 }
 window.addEventListener('resize', handleWindowSizeChange);
 
