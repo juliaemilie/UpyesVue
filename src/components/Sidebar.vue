@@ -6,10 +6,8 @@ const deviceHasSmallScreen = ref(window.innerWidth < 992);
 const sidebarVisible = ref(true);
 
 function handleWindowSizeChange() {
-    console.log("width: "+ window.innerWidth);
     deviceHasSmallScreen.value = (window.innerWidth < 992);
     sidebarVisible.value = (!deviceHasSmallScreen.value);
-    console.log("sidebar visible? "+sidebarVisible.value);
 }
 window.addEventListener('resize', handleWindowSizeChange);
 
