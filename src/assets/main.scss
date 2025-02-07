@@ -34,7 +34,7 @@ $black-green: #054E2D;
 //lightens color 
 $custom-green: tint-color($black-green, 10%);
 $primary: $black-green;
-$seconary: $light-green;
+$secondary: $light-green;
 
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/variables-dark";
