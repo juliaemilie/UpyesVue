@@ -63,8 +63,8 @@ function filterAndSort() {
                     </button>
                     <ul class="list-unstyled dropdown-menu">
                         <li v-for="country in countries" :key="country">
-                            <div class="dropdown-item">
-                                <input v-model="currentlySelectedCountries" type="checkbox" :id="country"/>
+                            <div class="dropdown-item">                                
+                                <input v-model="currentlySelectedCountries" type="checkbox" :id="country" :value="country" :index="country"/>
                                 <label :for="country" class="ps-2">{{ country }}</label>
                             </div>
                         </li>
