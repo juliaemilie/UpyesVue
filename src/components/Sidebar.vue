@@ -24,7 +24,7 @@ function toggleSidebar() {
 </script>
 
 <template>
-    <div class="container fixed-top ms-0 mt-5" :class="{ 'vw-20 vh-100': !deviceHasSmallScreen }">
+    <div class="container fixed-top ms-0 mt-5" :class="{ 'vw-20 vh-100': !deviceHasSmallScreen }" id="sidebar-container">
         <div class="row mt-5" :class="[alignLeft ? 'justify-content-start' : 'justify-content-end']">
             <button v-if="deviceHasSmallScreen" @click="toggleSidebar" class="btn btn-secondary m-4 mb-0 shadow-sm"
                 type="button" id="sidebar-button">

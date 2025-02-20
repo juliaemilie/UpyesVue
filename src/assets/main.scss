@@ -106,8 +106,8 @@ ul.navbar-nav,
   color: $black-green;
 }
 
-header {
-  z-index: 1040;
+#sidebar-container {
+  z-index: 1010;
 } 
 
 #header-nav li a:hover {
