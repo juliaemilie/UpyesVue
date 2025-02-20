@@ -13,11 +13,11 @@ import Sidebar from './Sidebar.vue'
     <div class="col-lg-8" :class="[isLTR ? 'offset-lg-3' : 'offset-lg-1']" id="#text-content">
       <section class="pt-4">
         <h1 class="m-3">Klimaschutz</h1>
-        <figure>
+        <figure class="text-center">
           <blockquote class="blockquote">
-            <p>Wir können eine Zukunft nicht akzeptieren, in der die Reichen in klimatisierten Blasen
+            <p>"Wir können eine Zukunft nicht akzeptieren, in der die Reichen in klimatisierten Blasen
               geschützt sind, während der Rest der Menschheit von tödlichem Wetter in unbewohnbaren
-              Ländern heimgesucht wird. </p>
+              Ländern heimgesucht wird." </p>
           </blockquote>
           <figcaption class="blockquote-footer">
             UN-Generalsekretär António Guterres

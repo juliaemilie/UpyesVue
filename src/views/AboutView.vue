@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="p-3 p-md-5 text-center">
       <h1>Über uns</h1>
       <section class="m-4 m-md-5">
@@ -43,7 +42,5 @@
           no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing
           elitr, sed diam nonumy eirmod</p>
       </section>
-
     </div>
-  </div>
 </template>

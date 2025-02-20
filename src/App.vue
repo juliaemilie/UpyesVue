@@ -7,10 +7,10 @@ import 'bootstrap'
   <header class="white-green-background sticky-top vh-10 shadow-sm">
         <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
-                <a class="navbar-brand d-flex" href="#">
+                <div class="navbar-brand d-flex">
                     <img src="@/assets/logoPure.png" alt="Upyes Logo" width="50" class="d-inline-block align-text-top">
                     <div>UPYES</div>
-                </a>
+                </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-navbar"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

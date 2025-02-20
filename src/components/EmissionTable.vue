@@ -1,17 +1,12 @@
 <script setup>
 import { ref } from 'vue';
 import emissionData from "@/assets/emissionData.json";
-import CompanyFilter from './CompanyFilter.vue';
 
 const data = ref(emissionData);
 const countries = Array.from(new Set(emissionData.map(a => a.country))).sort();
 const currentlySelectedCountries = ref([]);
 const currentlySelectedCompany = ref('');
 const sorting = ref('lth-company');
-
-function checkCountry(company) {
-    return currentlySelectedCountries.value.includes(company.country);
-}
 
 function compareStrings(a, b) {
     const nameA = a.toUpperCase(); // ignore upper and lowercase
@@ -27,14 +22,13 @@ function compareStrings(a, b) {
 
 function filterAndSort() {
     if (currentlySelectedCountries.value.length > 0) {
-        data.value = emissionData.filter(checkCountry);
+        data.value = emissionData.filter(company => currentlySelectedCountries.value.includes(company.country));
     } else {
         data.value = emissionData;
     }
     if (currentlySelectedCompany.value !== '') {
-        data.value = data.value.filter((company) => company.name === currentlySelectedCompany.value);
+        data.value = data.value.filter(company => company.name === currentlySelectedCompany.value);
     }
-    console.log("doing stuff");
     switch (sorting.value) {
         case 'htl-company':
             data.value.sort((a, b) => compareStrings(b.name, a.name));
@@ -70,21 +64,21 @@ function filterAndSort() {
                     <ul class="list-unstyled dropdown-menu">
                         <li v-for="country in countries" :key="country">
                             <div class="dropdown-item">
-                                <input v-model="currentlySelectedCountries" type="checkbox" :id="country"
-                                    :value="country" :index="country" />
+                                <input v-model="currentlySelectedCountries" type="checkbox" :id="country"/>
                                 <label :for="country" class="ps-2">{{ country }}</label>
                             </div>
                         </li>
                     </ul>
                 </div>
                 <div class="col m-2">
-                    <CompanyFilter v-model="currentlySelectedCompany"></CompanyFilter>
+                    <span>Nach Unternehmen filtern</span>
+                    <input class="form-control" v-model="currentlySelectedCompany" type="search" placeholder="z.B. Gazprom" maxlength="40">
                 </div>
             </div>
             <div class="row">
                 <label class="col m-2">
                     <span>Sortierung</span>
-                    <select v-model="sorting" class="form-select" aria-label="Sortierung">
+                    <select v-model="sorting" class="form-select">
                         <option value="lth-company" selected>alphabetisch aufsteigend nach Unternehmen</option>
                         <option value="htl-company">alphabetisch absteigend nach Unternehmen</option>
                         <option value="lth-country">alphabetisch aufsteigend nach Land</option>
@@ -105,7 +99,7 @@ function filterAndSort() {
                 <tr>
                     <th>Unternehmen</th>
                     <th>Land</th>
-                    <th>CO<sub>2</sub>-Emissionen in MtCO<sub>2</sub></th>
+                    <th>CO<sub>2</sub>-Emissionen in MtCO<sub>2</sub>e</th>
                 </tr>
             </thead>
             <tbody id="emissions-table-body">
