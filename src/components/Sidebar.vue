@@ -11,11 +11,6 @@ function handleWindowSizeChange() {
 }
 window.addEventListener('resize', handleWindowSizeChange);
 
-const sidebarAlignment = computed(() => ({
-    'justify-content-start': deviceHasSmallScreen.value || (!deviceHasSmallScreen.value && props.alignLeft),
-    'justify-content-end': !deviceHasSmallScreen.value && !props.alignLeft
-}))
-
 function toggleSidebar() {
     if (deviceHasSmallScreen.value) {
         sidebarVisible.value = !sidebarVisible.value;
@@ -24,16 +19,15 @@ function toggleSidebar() {
 </script>
 
 <template>
-    <div class="container fixed-top ms-0 mt-5" :class="{ 'vw-20 vh-100': !deviceHasSmallScreen }" id="sidebar-container">
+    <div class="container fixed-top ms-0 mt-5" :class="{ 'right-align': !alignLeft, 'vw-20 vh-100': !deviceHasSmallScreen }" id="sidebar-container">
         <div class="row mt-5" :class="[alignLeft ? 'justify-content-start' : 'justify-content-end']">
             <button v-if="deviceHasSmallScreen" @click="toggleSidebar" class="btn btn-secondary m-4 mb-0 shadow-sm"
                 type="button" id="sidebar-button">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
-        <div class="row vh-100" v-if="sidebarVisible">
-            <nav class="col-10 col-sm-8 col-lg-10 navbar vh-50 light-green-background rounded m-4 mt-0 p-4 shadow-sm"
-                :class="sidebarAlignment">
+        <div class="row vh-100" :class="[alignLeft ? 'justify-content-start' : 'justify-content-end']" v-if="sidebarVisible">
+            <nav class="col-10 col-sm-8 col-lg-10 navbar vh-50 light-green-background rounded m-4 mt-0 p-4 shadow-sm">
                 <div class="navbar-brand black-green-color d-none d-lg-block" id="sidebar-label">Klimaschutz</div>
                 <ul class="navbar-nav" id="main-nav">
                     <li class="nav-item py-2" @click="toggleSidebar"><a class="nav-link" href="#climatecrisis"><i

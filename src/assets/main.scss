@@ -110,6 +110,10 @@ ul.navbar-nav,
   z-index: 1010;
 } 
 
+.right-align {
+  left: auto;
+}
+
 #header-nav li a:hover {
   background-color: mix(white, $white-green, 50%);
 }
